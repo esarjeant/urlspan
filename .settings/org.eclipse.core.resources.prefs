@@ -1,4 +1,4 @@
 eclipse.preferences.version=1
-encoding//bin/collage=utf-8
-encoding//collage/CollageWindow.py=utf-8
-encoding//collage/__init__.py=utf-8
+encoding//bin/urlspan=utf-8
+encoding//urlspan/UrlSpanWindow.py=utf-8
+encoding//urlspan/__init__.py=utf-8

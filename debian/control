@@ -1,4 +1,4 @@
-Source: collage
+Source: urlspan
 Section: python
 Priority: extra
 Build-Depends: debhelper (>= 8),
@@ -8,7 +8,7 @@ Maintainer: UNKNOWN <UNKNOWN>
 Standards-Version: 3.9.3
 X-Python-Version: >= 2.6
 
-Package: collage
+Package: urlspan
 Architecture: all
 Depends: ${misc:Depends},
  ${python:Depends},

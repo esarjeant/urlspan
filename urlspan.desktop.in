@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=UrlSpan
+_Comment=UrlSpan application
+Categories=GNOME;Utility;
+Exec=urlspan
+Icon=urlspan
+Terminal=false
+Type=Application

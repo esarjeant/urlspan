@@ -1,5 +1,8 @@
-collage (0.1) quantal; urgency=low
+urlspan (0.1) precise; urgency=low
 
+  [ Eric W. Sarjeant ]
   * Initial release.
 
- -- Eric W. Sarjeant <eric@cartier>  Mon, 08 Apr 2013 09:58:09 -0400
+  [ Eric Sarjeant ]
+
+ -- Eric Sarjeant <eric@ubuntu>  Sat, 20 Apr 2013 05:15:07 -0700

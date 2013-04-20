@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="collage">
-  <schema id="net.launchpad.collage" path="/net/launchpad/collage/">
+<schemalist gettext-domain="urlspan">
+  <schema id="net.launchpad.urlspan" path="/net/launchpad/urlspan/">
     <key name="example" type="s">
       <default>''</default>
       <summary>Sample setting</summary>

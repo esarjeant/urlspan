@@ -21,8 +21,8 @@ from collage.PreferencesCollageDialog import PreferencesCollageDialog
 from collage_lib.CollageSettings import CollageSettings
 from collage_lib.CollageRequestFile import CollageRequestFile
 
-from lxml.html.soupparser import fromstring
-from lxml.etree import tostring
+#from lxml.html.soupparser import fromstring
+#from lxml.etree import tostring
 
 # See collage_lib.Window.py for more details about how this class works
 class CollageWindow(Window):
@@ -112,10 +112,10 @@ class CollageWindow(Window):
         raw = txtResponseBuf.get_text(txtResponseBuf.get_start_iter(), txtResponseBuf.get_end_iter(), False)
 
         rawunenc = urllib.unquote(raw)
-        rawdoc = fromstring(rawunenc)
-        sgmlstr = tostring(rawdoc, pretty_print=True).strip()
+        #rawdoc = fromstring(rawunenc)
+        #sgmlstr = tostring(rawdoc, pretty_print=True).strip()
 
-        txtResponseBuf.set_text(sgmlstr)
+        txtResponseBuf.set_text(rawunenc)
 
 
     def setHttpMethod(self, methodVal):

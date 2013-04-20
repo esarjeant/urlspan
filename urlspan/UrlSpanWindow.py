@@ -164,7 +164,9 @@ class UrlSpanWindow(Window):
         
 
     def on_mnu_save_activate(self, widget, data=None):
+        self.save()
 
+    def save(self):
         dialog = Gtk.FileChooserDialog("Save As", self, Gtk.FileChooserAction.SAVE, (Gtk.STOCK_CANCEL,  
                                         Gtk.ResponseType.CANCEL, Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
 
@@ -220,4 +222,6 @@ class UrlSpanWindow(Window):
            txtRequestBuf = self.txtRequest.get_buffer()
            txtRequestBuf.insert_at_cursor(docenc)
 
-
+    def on_mnu_save_as_activate(self, widget, data=None):
+        self.cfgFile = None
+        self.save()

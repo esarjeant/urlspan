@@ -7,20 +7,20 @@ import optparse
 
 import locale
 from locale import gettext as _
-locale.textdomain('collage')
+locale.textdomain('urlspan')
 
 from gi.repository import Gtk # pylint: disable=E0611
 
-from collage import CollageWindow
+from urlspan import UrlSpanWindow
 
-from collage_lib import set_up_logging, get_version
+from urlspan_lib import set_up_logging, get_version
 
 def parse_options():
     """Support for command line options"""
     parser = optparse.OptionParser(version="%%prog %s" % get_version())
     parser.add_option(
         "-v", "--verbose", action="count", dest="verbose",
-        help=_("Show debug messages (-vv debugs collage_lib also)"))
+        help=_("Show debug messages (-vv debugs urlspan_lib also)"))
     (options, args) = parser.parse_args()
 
     set_up_logging(options)
@@ -30,6 +30,6 @@ def main():
     parse_options()
 
     # Run the application.    
-    window = CollageWindow.CollageWindow()
+    window = UrlSpanWindow.UrlSpanWindow()
     window.show()
     Gtk.main()

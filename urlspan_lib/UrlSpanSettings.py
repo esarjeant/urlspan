@@ -7,11 +7,11 @@
 
 import ConfigParser, os
 
-class CollageSettings:
+class UrlSpanSettings:
 
     def __init__(self):
         config = ConfigParser.ConfigParser()
-        config.read(os.path.expanduser('~/.collage'))
+        config.read(os.path.expanduser('~/.urlspan'))
 
         if config.has_option("Preferences", "user_agent"):
             self.userAgent = config.get("Preferences", "user_agent")
@@ -37,7 +37,7 @@ class CollageSettings:
 
     def save(self):
         config = ConfigParser.ConfigParser()
-        config.read(os.path.expanduser('~/.collage'))
+        config.read(os.path.expanduser('~/.urlspan'))
 
         if (not config.has_section("Preferences")):
             config.add_section("Preferences")
@@ -45,5 +45,5 @@ class CollageSettings:
         config.set("Preferences", "user_agent", self.userAgent)
         config.set("Preferences", "http_accept", self.httpAccept)
 
-        with open(os.path.expanduser('~/.collage'), 'wb') as configfile:
+        with open(os.path.expanduser('~/.urlspan'), 'wb') as configfile:
             config.write(configfile)

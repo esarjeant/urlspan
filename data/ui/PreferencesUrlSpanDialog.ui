@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
-  <!-- interface-requires preferences_collage_dialog 1.0 -->
-  <object class="PreferencesCollageDialog" id="preferences_collage_dialog">
+  <!-- interface-requires preferences_urlspan_dialog 1.0 -->
+  <object class="PreferencesUrlSpanDialog" id="preferences_urlspan_dialog">
     <property name="can_focus">False</property>
-    <property name="title" translatable="yes">Collage Preferences</property>
-    <property name="icon">../media/collage.svg</property>
+    <property name="title" translatable="yes">UrlSpan Preferences</property>
+    <property name="icon">../media/urlspan.svg</property>
     <property name="type_hint">normal</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox1">

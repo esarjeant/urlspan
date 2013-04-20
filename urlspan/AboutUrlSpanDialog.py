@@ -5,20 +5,20 @@
 
 import locale
 from locale import gettext as _
-locale.textdomain('collage')
+locale.textdomain('urlspan')
 
 import logging
-logger = logging.getLogger('collage')
+logger = logging.getLogger('urlspan')
 
-from collage_lib.AboutDialog import AboutDialog
+from urlspan_lib.AboutDialog import AboutDialog
 
-# See collage_lib.AboutDialog.py for more details about how this class works.
-class AboutCollageDialog(AboutDialog):
-    __gtype_name__ = "AboutCollageDialog"
+# See urlspan_lib.AboutDialog.py for more details about how this class works.
+class AboutUrlSpanDialog(AboutDialog):
+    __gtype_name__ = "AboutUrlSpanDialog"
     
     def finish_initializing(self, builder): # pylint: disable=E1002
         """Set up the about dialog"""
-        super(AboutCollageDialog, self).finish_initializing(builder)
+        super(AboutUrlSpanDialog, self).finish_initializing(builder)
 
         # Code for other initialization actions should be added here.
 

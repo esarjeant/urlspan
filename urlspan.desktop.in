@@ -1,8 +1,8 @@
 [Desktop Entry]
-_Name=Collage
-_Comment=Collage application
+_Name=UrlSpan
+_Comment=UrlSpan application
 Categories=GNOME;Utility;
-Exec=collage
-Icon=collage
+Exec=urlspan
+Icon=urlspan
 Terminal=false
 Type=Application

@@ -6,36 +6,36 @@
 # This is your preferences dialog.
 #
 # Define your preferences in
-# data/glib-2.0/schemas/net.launchpad.collage.gschema.xml
+# data/glib-2.0/schemas/net.launchpad.urlspan.gschema.xml
 # See http://developer.gnome.org/gio/stable/GSettings.html for more info.
 
 from gi.repository import Gio # pylint: disable=E0611
 
-from collage_lib.CollageSettings import CollageSettings
+from urlspan_lib.UrlSpanSettings import UrlSpanSettings
 
 import locale
 from locale import gettext as _
-locale.textdomain('collage')
+locale.textdomain('urlspan')
 
 import logging
-logger = logging.getLogger('collage')
+logger = logging.getLogger('urlspan')
 
-from collage_lib.PreferencesDialog import PreferencesDialog
+from urlspan_lib.PreferencesDialog import PreferencesDialog
 
-class PreferencesCollageDialog(PreferencesDialog):
-    __gtype_name__ = "PreferencesCollageDialog"
+class PreferencesUrlSpanDialog(PreferencesDialog):
+    __gtype_name__ = "PreferencesUrlSpanDialog"
 
     def finish_initializing(self, builder): # pylint: disable=E1002
         """Set up the preferences dialog"""
-        super(PreferencesCollageDialog, self).finish_initializing(builder)
+        super(PreferencesUrlSpanDialog, self).finish_initializing(builder)
 
         # Bind each preference widget to gsettings
-        #settings = Gio.Settings("net.launchpad.collage")
+        #settings = Gio.Settings("net.launchpad.urlspan")
         #widget = self.builder.get_object('example_entry')
         #settings.bind("example", widget, "text", Gio.SettingsBindFlags.DEFAULT)
 
         # Code for other intialization actions should be added here.
-        self.cc = CollageSettings()
+        self.cc = UrlSpanSettings()
         
     def on_btnOk_clicked(self, widget):
         cmbUserAgent = self.builder.get_object("cmbUserAgent")

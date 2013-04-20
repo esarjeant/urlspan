@@ -10,7 +10,7 @@
 
 from gi.repository import Gtk # pylint: disable=E0611
 import logging
-logger = logging.getLogger('collage_lib')
+logger = logging.getLogger('urlspan_lib')
 
 from . helpers import get_builder, show_uri, get_help_uri
 
@@ -23,8 +23,8 @@ class PreferencesDialog(Gtk.Dialog):
         
         Returns a fully instantiated PreferencesDialog object.
         """
-        builder = get_builder('PreferencesCollageDialog')
-        new_object = builder.get_object("preferences_collage_dialog")
+        builder = get_builder('PreferencesUrlSpanDialog')
+        new_object = builder.get_object("preferences_urlspan_dialog")
         new_object.finish_initializing(builder)
         return new_object
 
@@ -33,7 +33,7 @@ class PreferencesDialog(Gtk.Dialog):
 
         finish_initalizing should be called after parsing the ui definition
         and creating a PreferencesDialog object with it in order to
-        finish initializing the start of the new PerferencesCollageDialog
+        finish initializing the start of the new PerferencesUrlSpanDialog
         instance.
         
         Put your initialization code in here and leave __init__ undefined.

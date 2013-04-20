@@ -3,12 +3,12 @@
 # This file is in the public domain
 ### END LICENSE
 
-# Store and retrieve Collage request files. These are HTTP
+# Store and retrieve UrlSpan request files. These are HTTP
 # request/response with raw headers and such.
 
 import os
 
-class CollageRequestFile:
+class UrlSpanRequestFile:
 
     def __init__(self):
         self.requestUrl = "http://localhost"
@@ -114,7 +114,7 @@ class CollageRequestFile:
             cf.write(self.requestDocument)
 
             cf.close()
-        #with open(os.path.expanduser('~/.collage'), 'w') as configfile:
+        #with open(os.path.expanduser('~/.urlspan'), 'w') as configfile:
         #    config.write(configfile)
 
 

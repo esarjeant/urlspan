@@ -8,34 +8,34 @@ import locale
 import gobject
 import urllib
 from locale import gettext as _
-locale.textdomain('collage')
+locale.textdomain('urlspan')
 
 from gi.repository import Gtk, Gdk # pylint: disable=E0611
 import logging
-logger = logging.getLogger('collage')
+logger = logging.getLogger('urlspan')
 
-from collage_lib import Window
-from collage.AboutCollageDialog import AboutCollageDialog
-from collage.PreferencesCollageDialog import PreferencesCollageDialog
+from urlspan_lib import Window
+from urlspan.AboutUrlSpanDialog import AboutUrlSpanDialog
+from urlspan.PreferencesUrlSpanDialog import PreferencesUrlSpanDialog
 
-from collage_lib.CollageSettings import CollageSettings
-from collage_lib.CollageRequestFile import CollageRequestFile
+from urlspan_lib.UrlSpanSettings import UrlSpanSettings
+from urlspan_lib.UrlSpanRequestFile import UrlSpanRequestFile
 
 #from lxml.html.soupparser import fromstring
 #from lxml.etree import tostring
 
-# See collage_lib.Window.py for more details about how this class works
-class CollageWindow(Window):
-    __gtype_name__ = "CollageWindow"
+# See urlspan_lib.Window.py for more details about how this class works
+class UrlSpanWindow(Window):
+    __gtype_name__ = "UrlSpanWindow"
     
     def finish_initializing(self, builder): # pylint: disable=E1002
         """Set up the main window"""
-        super(CollageWindow, self).finish_initializing(builder)
+        super(UrlSpanWindow, self).finish_initializing(builder)
 
-        self.AboutDialog = AboutCollageDialog
-        self.PreferencesDialog = PreferencesCollageDialog
+        self.AboutDialog = AboutUrlSpanDialog
+        self.PreferencesDialog = PreferencesUrlSpanDialog
 
-        self.config = CollageSettings()
+        self.config = UrlSpanSettings()
 
         # Code for other initialization actions should be added here.
         self.cmbHttpMethod = self.builder.get_object("cmbHttpMethod")
@@ -173,7 +173,7 @@ class CollageWindow(Window):
 
             # open the specified file
             if response == Gtk.ResponseType.OK:
-                self.cfgFile = CollageRequestFile()
+                self.cfgFile = UrlSpanRequestFile()
                 self.cfgFile.setFile(dialog.get_filename())
         
 
@@ -197,7 +197,7 @@ class CollageWindow(Window):
         if response == Gtk.ResponseType.OK:
            
             # open the specified file
-            self.cfgFile = CollageRequestFile()
+            self.cfgFile = UrlSpanRequestFile()
             self.cfgFile.loadFile(dialog.get_filename())
 
             # use these settings

@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=Collage
+_Comment=Collage application
+Categories=GNOME;Utility;
+Exec=collage
+Icon=collage
+Terminal=false
+Type=Application

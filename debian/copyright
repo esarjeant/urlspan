@@ -1,8 +1,8 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: urlspan
-Upstream-Contact: UNKNOWN <UNKNOWN>
-Source: UNKNOWN
+Upstream-Contact: Eric W. Sarjeant <eric@sarjeant.com>
+Source: https://launchpad.net/urlspan
 
 Files: *
 Copyright: (C) 2013 Eric W. Sarjeant <eric@sarjeant.com>
-License: UNKNOWN
+License: BSD

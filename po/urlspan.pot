@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-20 06:20-0700\n"
+"POT-Creation-Date: 2013-04-27 13:41-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,38 +66,37 @@ msgstr ""
 msgid "*/*"
 msgstr ""
 
-#: ../data/ui/PreferencesUrlSpanDialog.ui.h:12
-#: ../data/ui/UrlSpanWindow.ui.h:10
+#: ../data/ui/PreferencesUrlSpanDialog.ui.h:12 ../data/ui/UrlSpanWindow.ui.h:9
 msgid "text/plain"
 msgstr ""
 
 #: ../data/ui/PreferencesUrlSpanDialog.ui.h:13
-#: ../data/ui/UrlSpanWindow.ui.h:12
+#: ../data/ui/UrlSpanWindow.ui.h:11
 msgid "text/html"
 msgstr ""
 
 #: ../data/ui/PreferencesUrlSpanDialog.ui.h:14
-#: ../data/ui/UrlSpanWindow.ui.h:11
+#: ../data/ui/UrlSpanWindow.ui.h:10
 msgid "text/xml"
 msgstr ""
 
 #: ../data/ui/PreferencesUrlSpanDialog.ui.h:15
-#: ../data/ui/UrlSpanWindow.ui.h:15
+#: ../data/ui/UrlSpanWindow.ui.h:14
 msgid "application/json"
 msgstr ""
 
 #: ../data/ui/PreferencesUrlSpanDialog.ui.h:16
-#: ../data/ui/UrlSpanWindow.ui.h:16
+#: ../data/ui/UrlSpanWindow.ui.h:15
 msgid "application/javascript"
 msgstr ""
 
 #: ../data/ui/PreferencesUrlSpanDialog.ui.h:17
-#: ../data/ui/UrlSpanWindow.ui.h:17
+#: ../data/ui/UrlSpanWindow.ui.h:16
 msgid "application/octet-stream"
 msgstr ""
 
 #: ../data/ui/PreferencesUrlSpanDialog.ui.h:18
-#: ../data/ui/UrlSpanWindow.ui.h:18
+#: ../data/ui/UrlSpanWindow.ui.h:17
 msgid "application/xml"
 msgstr ""
 
@@ -118,67 +117,67 @@ msgid "_Edit"
 msgstr ""
 
 #: ../data/ui/UrlSpanWindow.ui.h:4
-msgid "_View"
-msgstr ""
-
-#: ../data/ui/UrlSpanWindow.ui.h:5
 msgid "_Help"
 msgstr ""
 
-#: ../data/ui/UrlSpanWindow.ui.h:6
+#: ../data/ui/UrlSpanWindow.ui.h:5
 msgid "Contents"
 msgstr ""
 
-#: ../data/ui/UrlSpanWindow.ui.h:7
+#: ../data/ui/UrlSpanWindow.ui.h:6
 msgid "Method"
 msgstr ""
 
-#: ../data/ui/UrlSpanWindow.ui.h:8
+#: ../data/ui/UrlSpanWindow.ui.h:7
 msgid "URL"
 msgstr ""
 
-#: ../data/ui/UrlSpanWindow.ui.h:9
+#: ../data/ui/UrlSpanWindow.ui.h:8
 msgid "Content Type"
 msgstr ""
 
-#: ../data/ui/UrlSpanWindow.ui.h:13
+#: ../data/ui/UrlSpanWindow.ui.h:12
 msgid "text/css"
 msgstr ""
 
-#: ../data/ui/UrlSpanWindow.ui.h:14
+#: ../data/ui/UrlSpanWindow.ui.h:13
 msgid "application/atom+xml"
 msgstr ""
 
-#: ../data/ui/UrlSpanWindow.ui.h:19
+#: ../data/ui/UrlSpanWindow.ui.h:18
 msgid "application/x-www-form-urlencoded"
 msgstr ""
 
-#: ../data/ui/UrlSpanWindow.ui.h:20
+#: ../data/ui/UrlSpanWindow.ui.h:19
 msgid "GET"
 msgstr ""
 
-#: ../data/ui/UrlSpanWindow.ui.h:21
+#: ../data/ui/UrlSpanWindow.ui.h:20
 msgid "POST"
 msgstr ""
 
-#: ../data/ui/UrlSpanWindow.ui.h:22
+#: ../data/ui/UrlSpanWindow.ui.h:21
 msgid "PUT"
 msgstr ""
 
-#: ../data/ui/UrlSpanWindow.ui.h:23
+#: ../data/ui/UrlSpanWindow.ui.h:22
 msgid "Response\t"
 msgstr ""
 
-#: ../data/ui/UrlSpanWindow.ui.h:24
+#: ../data/ui/UrlSpanWindow.ui.h:23
 msgid "Request"
 msgstr ""
 
+#: ../data/ui/UrlSpanWindow.ui.h:24
+msgid "Send Request"
+msgstr ""
+
 #: ../data/ui/UrlSpanWindow.ui.h:25
-msgid "Send"
+msgid "URL Decode"
 msgstr ""
 
 #: ../data/ui/UrlSpanWindow.ui.h:26
-msgid "URL Decode"
+msgid "Copy Response"
 msgstr ""
 
 #: ../urlspan/__init__.py:23

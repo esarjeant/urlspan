@@ -1,8 +1,14 @@
-urlspan (0.1) precise; urgency=low
+urlspan (0.2) precise; urgency=low
+
+  * 
+
+ -- Eric Sarjeant <eric@ubuntu>  Sat, 27 Apr 2013 13:41:26 -0400
+
+urlspan (0.2) precise; urgency=low
 
   [ Eric W. Sarjeant ]
   * Initial release.
 
   [ Eric Sarjeant ]
 
- -- Eric Sarjeant <eric@ubuntu>  Sat, 20 Apr 2013 06:20:17 -0700
+ -- Eric Sarjeant <eric@ubuntu>  Sat, 27 Apr 2013 10:33:01 -0700

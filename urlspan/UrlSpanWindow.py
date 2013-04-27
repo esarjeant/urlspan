@@ -146,6 +146,13 @@ class UrlSpanWindow(Window):
 
         txtResponseBuf.set_text(rawunenc)
 
+    def on_btnCopyResponse_clicked(self, widget):
+        txtResponseBuf = self.txtResponse.get_buffer()
+        raw = txtResponseBuf.get_text(txtResponseBuf.get_start_iter(), txtResponseBuf.get_end_iter(), False)
+
+        clippy = Gtk.Clipboard().get(Gdk.SELECTION_CLIPBOARD)
+        clippy.set_text(raw, len(raw))
+        clippy.store()        
 
     def setHttpMethod(self, methodVal):
 
@@ -196,18 +203,20 @@ class UrlSpanWindow(Window):
         self.save()
 
     def save(self):
-        dialog = Gtk.FileChooserDialog("Save As", self, Gtk.FileChooserAction.SAVE, (Gtk.STOCK_CANCEL,  
-                                        Gtk.ResponseType.CANCEL, Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
 
         if self.cfgFile == None:
+            dialog = Gtk.FileChooserDialog("Save As", self, Gtk.FileChooserAction.SAVE, (Gtk.STOCK_CANCEL,  
+                                           Gtk.ResponseType.CANCEL, Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
             response = dialog.run()
+
+            # remove dialog
+            dialog.destroy()
 
             # open the specified file
             if response == Gtk.ResponseType.OK:
                 self.cfgFile = UrlSpanRequestFile()
                 self.cfgFile.setFile(dialog.get_filename())
         
-
         if self.cfgFile != None:
             self.cfgFile.setRequestMethod(self.getHttpMethod())
             self.cfgFile.setRequestUrl(self.getHttpRequestUrl())
@@ -215,9 +224,6 @@ class UrlSpanWindow(Window):
             self.cfgFile.setRequestDocument(self.getRequestDocument())
 
             self.cfgFile.save()
-
-        # remove dialog
-        dialog.destroy()
 
     def on_mnu_open_activate(self, widget, data=None):
         dialog = Gtk.FileChooserDialog("Open File", self, Gtk.FileChooserAction.OPEN, (Gtk.STOCK_CANCEL,  

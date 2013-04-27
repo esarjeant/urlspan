@@ -99,13 +99,13 @@
                     </child>
                     <child>
                       <object class="GtkImageMenuItem" id="mnu_close">
-                        <property name="label">gtk-close</property>
+                        <property name="label">gtk-quit</property>
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
-                        <accelerator key="w" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                        <accelerator key="q" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                       </object>
                     </child>
                   </object>
@@ -473,15 +473,15 @@
             <property name="can_focus">False</property>
             <child>
               <object class="GtkButton" id="btnRequest">
-                <property name="label" translatable="yes">Send</property>
+                <property name="label" translatable="yes">Send Request</property>
                 <property name="use_action_appearance">False</property>
+                <property name="width_request">140</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="halign">end</property>
                 <property name="valign">end</property>
                 <property name="hexpand">True</property>
-                <property name="border_width">5</property>
                 <property name="use_action_appearance">False</property>
                 <property name="image">image2</property>
               </object>
@@ -496,6 +496,7 @@
               <object class="GtkButton" id="btnDecode">
                 <property name="label" translatable="yes">URL Decode</property>
                 <property name="use_action_appearance">False</property>
+                <property name="width_request">140</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -504,6 +505,23 @@
               </object>
               <packing>
                 <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnCopyResponse">
+                <property name="label" translatable="yes">Copy Response</property>
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">140</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_action_appearance">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
                 <property name="top_attach">0</property>
                 <property name="width">1</property>
                 <property name="height">1</property>

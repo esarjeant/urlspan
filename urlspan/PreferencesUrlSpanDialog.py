@@ -29,14 +29,36 @@ class PreferencesUrlSpanDialog(PreferencesDialog):
         """Set up the preferences dialog"""
         super(PreferencesUrlSpanDialog, self).finish_initializing(builder)
 
-        # Bind each preference widget to gsettings
-        #settings = Gio.Settings("net.launchpad.urlspan")
-        #widget = self.builder.get_object('example_entry')
-        #settings.bind("example", widget, "text", Gio.SettingsBindFlags.DEFAULT)
-
         # Code for other intialization actions should be added here.
         self.cc = UrlSpanSettings()
+
+        cmbUserAgent = self.builder.get_object("cmbUserAgent")       
+        self.setComboBoxByValue(cmbUserAgent, self.cc.getUserAgent())
+
+        cmbAccept = self.builder.get_object("cmbAccept")
+        self.setComboBoxByValue(cmbAccept, self.cc.getAccept())
+
+    def setComboBoxByValue(self, cmb, val):
+
+        # default to something sensible
+        cmb.set_active(0)
+
+        # try to match on the method val
+        model = cmb.get_model()
+        iterTree = model.get_iter_first()
+
+        for i, k in enumerate(model):
+            itr = model.get_iter(i)
+            title = model.get_value(itr, 0)
+
+            if title == val:
+                cmb.set_active(i)
+                break
+
         
+    def on_btnCancel_clicked(self, widget):
+        self.destroy()
+
     def on_btnOk_clicked(self, widget):
         cmbUserAgent = self.builder.get_object("cmbUserAgent")
        
@@ -51,3 +73,5 @@ class PreferencesUrlSpanDialog(PreferencesDialog):
             self.cc.setAccept(accept)
 
         self.cc.save()
+        self.destroy()
+

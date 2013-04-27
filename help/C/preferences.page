@@ -5,14 +5,15 @@
 <info>
   <link type="guide" xref="index#contents"/>
   <credit type="author">
-    <name>Your Name</name>
-    <email>Your E-mail</email>
-    <years>2010</years>
+    <name>Eric W. Sarjeant</name>
+    <email>eric@sarjeant.com</email>
+    <years>2013</years>
   </credit>
-  <desc>Optional short description of Preferences for contents page</desc>
+  <desc>Configure application settings.</desc>
 </info>
 
 <title>Preferences</title>
-<p>This is the preferences page.</p>
+<p>Configure application settings that are shared across multiple requests. These
+are things like the browser user agent or the content accept criteria.</p>
 
 </page>

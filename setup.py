@@ -125,13 +125,13 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
 
 DistUtilsExtra.auto.setup(
     name='urlspan',
-    version='0.1',
-    #license='GPL-3',
-    #author='Your Name',
-    #author_email='email@ubuntu.com',
-    #description='UI for managing …',
-    #long_description='Here a longer description',
-    #url='https://launchpad.net/urlspan',
+    version='0.2',
+    license='BSD',
+    author='Eric W. Sarjeant',
+    author_email='eric@sarjeant.com',
+    description='Interactively query RESTful services.',
+    long_description='Developer tool for interactively querying SOAP/JSON web service endpoints.',
+    url='https://launchpad.net/urlspan',
     cmdclass={'install': InstallAndUpdateDataDirectory}
     )
 

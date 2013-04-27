@@ -9,12 +9,12 @@ import locale
 from locale import gettext as _
 locale.textdomain('urlspan')
 
-from gi.repository import Gtk # pylint: disable=E0611
+from gi.repository import Gtk,GLib,Gdk # pylint: disable=E0611
 
 from urlspan import UrlSpanWindow
 
 from urlspan_lib import set_up_logging, get_version
-
+    
 def parse_options():
     """Support for command line options"""
     parser = optparse.OptionParser(version="%%prog %s" % get_version())
@@ -29,7 +29,13 @@ def main():
     'constructor for your class instances'
     parse_options()
 
+    GLib.threads_init()
+    Gdk.threads_init()
+    Gdk.threads_enter()
+
     # Run the application.    
     window = UrlSpanWindow.UrlSpanWindow()
     window.show()
     Gtk.main()
+
+    Gdk.threads_leave()

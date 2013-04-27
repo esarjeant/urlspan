@@ -3,10 +3,12 @@
 # This file is in the public domain
 ### END LICENSE
 
-import httplib2
+#import httplib2
 import locale
 import gobject
 import urllib
+import time
+import threading
 from locale import gettext as _
 locale.textdomain('urlspan')
 
@@ -20,6 +22,7 @@ from urlspan.PreferencesUrlSpanDialog import PreferencesUrlSpanDialog
 
 from urlspan_lib.UrlSpanSettings import UrlSpanSettings
 from urlspan_lib.UrlSpanRequestFile import UrlSpanRequestFile
+from urlspan_lib.HttpRequestThread import HttpRequestThread
 
 #from lxml.html.soupparser import fromstring
 #from lxml.etree import tostring
@@ -54,21 +57,47 @@ class UrlSpanWindow(Window):
  
     def on_btnRequest_clicked(self, widget):
 
-        method = self.getHttpMethod()
-        contentType = self.getHttpContentType()
-        body = self.getRequestDocument()
+        widget.set_sensitive(False) 
+        self.txtResponse.set_sensitive(False)
 
-        headers = {'Content-type': contentType, 'Accept': self.config.getAccept()}
-        url = self.getHttpRequestUrl()
-
-        # request the raw response
-        resp, content = httplib2.Http().request(url, method, headers=headers, body=body)
         txtResponseBuf = self.txtResponse.get_buffer()
-        txtResponseBuf.set_text(content)
+        txtResponseBuf.set_text("")
 
-        # handle the error somehow...
-        self.lblStatus.set_text(
-"Status: %s; Content-Length: %s; Content-Type: %s" % (resp['status'], resp['content-length'], resp['content-type']))
+        print "create HttpRequestThread"
+        condition = threading.Condition()
+        condition.acquire()
+
+        thHttp = HttpRequestThread(condition, self.getHttpRequestUrl())
+        thHttp.setMethod(self.getHttpMethod())
+        thHttp.setContentType(self.getHttpContentType())
+        thHttp.setBody(self.getRequestDocument())
+        thHttp.setAccept(self.config.getAccept())
+
+        thHttp.start()
+
+        condition.wait()
+
+        print "done_http_request..."
+        widget.set_sensitive(True)
+
+        # update response
+        if (thHttp.hasError()):
+            print "there was an error"
+            print thHttp.getError()
+
+            md = Gtk.MessageDialog(self, 
+                                   Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                                   Gtk.MessageType.ERROR,
+                                   Gtk.ButtonsType.OK,
+                                   "Error Processing Request")
+            md.format_secondary_text(thHttp.getError())
+            md.run()
+            md.destroy()
+
+        else:
+            txtResponseBuf.set_text(thHttp.getResponseContent())
+            self.lblStatus.set_text(thHttp.getResponseMessage())
+
 
     def resetForm(self):
         self.setHttpMethod("")
@@ -225,3 +254,6 @@ class UrlSpanWindow(Window):
     def on_mnu_save_as_activate(self, widget, data=None):
         self.cfgFile = None
         self.save()
+
+
+

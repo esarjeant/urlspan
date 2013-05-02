@@ -48,7 +48,9 @@ class HttpRequestThread(threading.Thread):
     def run(self):
 
         try:
-            headers = {'Content-type': self.contentType, 'Accept': self.accept}
+
+            bodyLength = len(self.body)
+            headers = {'content-type': self.contentType, 'accept': self.accept, 'content-length': str(bodyLength)}
 
             # request the raw response
             resp, content = httplib2.Http().request(self.url, self.method, headers=headers, body=self.body)

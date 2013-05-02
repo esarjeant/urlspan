@@ -1,8 +1,14 @@
+urlspan (0.3) precise; urgency=low
+
+  * Addressing content length error. 
+
+ -- Eric Sarjeant <eric@ubuntu>  Wed, 01 May 2013 21:20:09 -0400
+
 urlspan (0.2) precise; urgency=low
 
-  * 
+  * Implement threaded http request/response
 
- -- Eric Sarjeant <eric@ubuntu>  Sat, 27 Apr 2013 13:41:26 -0400
+ -- Eric Sarjeant <eric@ubuntu>  Wed, 01 May 2013 20:58:46 -0400
 
 urlspan (0.2) precise; urgency=low
 

@@ -12,6 +12,9 @@ import httplib2
 
 from threading import Thread
 
+from urlspan_lib.UrlSpanSettings import UrlSpanSettings
+
+
 class HttpRequestThread(threading.Thread):
 
     def __init__(self, condition, url):
@@ -49,19 +52,26 @@ class HttpRequestThread(threading.Thread):
 
         try:
 
+            config = UrlSpanSettings()
+
             bodyLength = len(self.body)
-            headers = {'content-type': self.contentType, 'accept': self.accept, 'content-length': str(bodyLength)}
+            print ("content-length: %s" % str(bodyLength))
+
+            headers = {'user-agent': config.getUserAgent(), 'content-type': self.contentType, 'accept': self.accept}
 
             # request the raw response
+            print "sending request to httplib2..."
             resp, content = httplib2.Http().request(self.url, self.method, headers=headers, body=self.body)
+            print "received response from httplib2..."
         
             # parse the response
             self.respContent = content
             self.respStatus = resp['status']
-            self.respContentLength = resp['content-length']
+            self.respContentLength = len(self.respContent)
             self.respContentType = resp['content-type']
 
         except Exception, e:
+            print "Error in run()"
             self.error = e.message
 
         finally:
